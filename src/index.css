@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --manuflix-red: #E50914;
+  --manuflix-black: #141414;
+  --manuflix-dark: #1F1F1F;
+  --manuflix-gray: #757575;
+}
+
+body {
+  background-color: var(--manuflix-black);
+  color: white;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+}
+
+.payment-option {
+  @apply border border-manuflix-gray rounded-lg p-4 cursor-pointer transition-colors;
+}
+
+.payment-option.selected {
+  @apply border-manuflix-red bg-manuflix-red bg-opacity-10;
+}
+
+.pulse-red {
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(229, 9, 20, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(229, 9, 20, 0);
+  }
+}
